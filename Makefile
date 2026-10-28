@@ -43,6 +43,8 @@ clean: rm-ipynb
 rm-ipynb:
 	find . -name "*.ipynb" -exec rm {} \;
 
+# Avoid a Jupyter deprecation warning, which pytest treats as an error.
+test: export JUPYTER_PLATFORM_DIRS = 1
 test: $(ENV_STAMP)
 	pytest .
 
