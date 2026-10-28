@@ -31,7 +31,7 @@ jobs:
 
       - name: "Build HTML"
         run: |
-          make html
+          make html VENV=
           echo -n 'lectures.scientific-python.org' > _build/html/CNAME
           touch _build/html/.nojekyll
 
